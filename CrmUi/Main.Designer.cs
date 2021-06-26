@@ -59,8 +59,9 @@ namespace CrmUi
             this.customerToolStripMenuItem,
             this.checkToolStripMenuItem});
             this.сущностиToolStripMenuItem.Name = "сущностиToolStripMenuItem";
-            this.сущностиToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
-            this.сущностиToolStripMenuItem.Text = "Сущности";
+            this.сущностиToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.сущностиToolStripMenuItem.Text = "Меню";
+            this.сущностиToolStripMenuItem.Click += new System.EventHandler(this.сущностиToolStripMenuItem_Click);
             // 
             // productToolStripMenuItem
             // 
@@ -126,6 +127,7 @@ namespace CrmUi
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Main";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Main_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
