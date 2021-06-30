@@ -8,31 +8,35 @@ namespace CrmBl.Model
 {
     public class Generator
     {
-        Random rnd = new Random();
-        
-        public List<Customer> Customers { get; set; }
-        public List<Seller> Sellers { get; set; }
-        public List<Product> Products { get; set; }
+       Random rnd = new Random();
+
+
+        public List<Customer> Customers { get; set; } = new List<Customer>();
+        public List<Product> Products { get; set; } = new List<Product>();
+        public List<Seller> Sellers { get; set; } = new List<Seller>();
 
         public List<Customer> GetNewCustomers(int count)
         {
             var result = new List<Customer>();
-            for (int i = 0; i < count; i++)
+
+            for(int i = 0; i < count; i++)
             {
                 var customer = new Customer()
                 {
-                    CustomerId = Customers.Count, 
+                    CustomerId = Customers.Count,
                     Name = GetRandomText()
                 };
                 Customers.Add(customer);
                 result.Add(customer);
             }
+
             return result;
         }
 
         public List<Seller> GetNewSellers(int count)
         {
             var result = new List<Seller>();
+
             for (int i = 0; i < count; i++)
             {
                 var seller = new Seller()
@@ -43,11 +47,14 @@ namespace CrmBl.Model
                 Sellers.Add(seller);
                 result.Add(seller);
             }
+
             return result;
         }
+
         public List<Product> GetNewProducts(int count)
         {
             var result = new List<Product>();
+
             for (int i = 0; i < count; i++)
             {
                 var product = new Product()
@@ -55,11 +62,12 @@ namespace CrmBl.Model
                     ProductId = Products.Count,
                     Name = GetRandomText(),
                     Count = rnd.Next(10, 1000),
-                    Price = Convert.ToDecimal(rnd.Next(5, 100000) + rnd.NextDouble())
+                    Price = Convert.ToDecimal(rnd.Next(5, 100000) +  rnd.NextDouble())
                 };
                 Products.Add(product);
                 result.Add(product);
             }
+
             return result;
         }
 
